@@ -1,0 +1,19 @@
+{
+  "name": "kirtanavali",
+  "version": "1.0.0",
+  "description": "1000s of kirtans parsed from pdf",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "parse-pdf": "node -r esbuild-register src/parsePdf.ts "
+  },
+  "author": "issolakelandfl",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^20.11.28",
+    "esbuild": "^0.20.2",
+    "esbuild-register": "^3.5.0",
+    "pdf2json": "^3.0.5",
+    "typescript": "^5.4.2"
+  }
+}

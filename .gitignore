@@ -4,5 +4,8 @@ yarn-debug.log*
 node_modules/
 .npm
 
+# using yarn
+package-lock.json
+
 # tmp
 tmp/
