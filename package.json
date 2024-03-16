@@ -5,7 +5,9 @@
   "private": true,
   "main": "src/index.ts",
   "scripts": {
-    "parse-pdf": "node -r esbuild-register src/parsePdf.ts "
+    "parse": "node -r esbuild-register src/parsePdf.ts",
+    "parse-debug": "node --inspect-brk -r esbuild-register src/parsePdf.ts",
+    "format": "prettier --ignore-path .gitignore 'src/{*,**}.{ts,json} --write'"
   },
   "author": "issolakelandfl",
   "license": "MIT",
@@ -14,6 +16,7 @@
     "esbuild": "^0.20.2",
     "esbuild-register": "^3.5.0",
     "pdf2json": "^3.0.5",
+    "prettier": "^3.2.5",
     "typescript": "^5.4.2"
   }
 }
