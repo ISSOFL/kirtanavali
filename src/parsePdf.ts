@@ -6,10 +6,9 @@ const jsonPath = 'out/Kirtanavali_Guj.json';
 
 async function main() {
   const parsedPdf = await readPdf(pdfPath);
-  console.log(parsedPdf);
   const lines = parsePages(parsedPdf);
-
   fs.writeFileSync(jsonPath, JSON.stringify(lines, null, '  '), 'utf8');
+  console.log(`Parsed ${lines.length} pages`);
 }
 
 function readPdf(pdfFile: string): Promise<PDFOutput> {
