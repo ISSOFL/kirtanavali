@@ -5,8 +5,9 @@
   "private": true,
   "main": "src/index.ts",
   "scripts": {
-    "parse": "node -r esbuild-register src/parsePdf.ts",
-    "parse-debug": "node --inspect-brk -r esbuild-register src/parsePdf.ts",
+    "parsePdf": "node -r esbuild-register src/parsePdf.ts",
+    "processUnicodeJson": "node -r esbuild-register src/processUnicodeJson.ts",
+    "parsePdf-debug": "node --inspect-brk -r esbuild-register src/parsePdf.ts",
     "format": "prettier --ignore-path .gitignore 'src/{*,**}.{ts,json} --write'"
   },
   "author": "issolakelandfl",
