@@ -8,6 +8,7 @@
     "parsePdf": "node -r esbuild-register src/parsePdf.ts",
     "processUnicodeJson": "node -r esbuild-register src/processUnicodeJson.ts",
     "parsePdf-debug": "node --inspect-brk -r esbuild-register src/parsePdf.ts",
+    "gujToLipi": "node --inspect-brk -r esbuild-register src/gujToLipi.ts",
     "format": "prettier --ignore-path .gitignore 'src/{*,**}.{ts,json} --write'"
   },
   "author": "issolakelandfl",
