@@ -17,12 +17,13 @@ async function main() {
 
 function gujToLipi(gujLines: string[]): string[] {
   const lipiLines = gujLines.map(transliterate);
+  // return lipiLines;
   const interleavedLines = interleaveArrays(lipiLines, gujLines);
   return interleavedLines;
 }
 
 function transliterate(gujStr: string): string {
-  const isoStr = Sanscript.t(gujStr, 'gujarati', 'iso');
+  let isoStr = Sanscript.t(gujStr, 'gujarati', 'iso');
   const replacements: Record<string, string> = {
     ṁ: 'ṅ', // ટં
     'm\u200c': 'ṁ', // મ્‌
@@ -32,15 +33,24 @@ function transliterate(gujStr: string): string {
     ē: 'e',
     ū: 'u',
     ō: 'o',
-    cc: 'cch', // વચ્ચે
+    ch: 'c̄', // છ
+    c: 'ch', // ચ
+    chch: 'cch', // ચ્ચે
     ḷ: 'ḏ', // ળ
     'd\u200c': 'ḋ', // દ્‌
     ṇ: 'ṉ', // ણ
     '\u2019': 'ḫ', // ના’વે
     'h\u200c': 'ḣ', // હ્‌
     jh: 'ʝ',
+    '\u200c': '', // hidden character
   };
-  return isoStr.replace(new RegExp(Object.keys(replacements).join('|'), 'g'), (match) => replacements[match]);
+
+  for (const key in replacements) {
+    // iterative replacement
+    isoStr = isoStr.replaceAll(key, replacements[key]);
+  }
+
+  return isoStr;
 }
 
 function interleaveArrays<T>(arr1: T[], arr2: T[]): T[] {
