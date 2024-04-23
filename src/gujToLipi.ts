@@ -24,19 +24,20 @@ function gujToLipi(gujLines: string[]): string[] {
 function transliterate(gujStr: string): string {
   const isoStr = Sanscript.t(gujStr, 'gujarati', 'iso');
   const replacements: Record<string, string> = {
-    ṁ: 'ṅ',
+    ṁ: 'ṅ', // ટં
+    'm\u200c': 'ṁ', // મ્‌
+    'n\u200c': 'ṅ', //
     ī: 'i',
     ś: 'sh',
     ē: 'e',
     ū: 'u',
     ō: 'o',
-    c: 'ch',
-    cc: 'cch',
-    ḷ: 'ḏ',
-    ṇ: 'ṉ',
-    '\u2019': 'ḫ',
-    'm\u200c ': 'ṁ',
-    'h\u200c': 'ḣ',
+    cc: 'cch', // વચ્ચે
+    ḷ: 'ḏ', // ળ
+    'd\u200c': 'ḋ', // દ્‌
+    ṇ: 'ṉ', // ણ
+    '\u2019': 'ḫ', // ના’વે
+    'h\u200c': 'ḣ', // હ્‌
     jh: 'ʝ',
   };
   return isoStr.replace(new RegExp(Object.keys(replacements).join('|'), 'g'), (match) => replacements[match]);
