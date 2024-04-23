@@ -34,6 +34,10 @@ function transliterate(gujStr: string): string {
     cc: 'cch',
     ḷ: 'ḏ',
     ṇ: 'ṉ',
+    '\u2019': 'ḫ',
+    'm\u200c ': 'ṁ',
+    'h\u200c': 'ḣ',
+    jh: 'ʝ',
   };
   return isoStr.replace(new RegExp(Object.keys(replacements).join('|'), 'g'), (match) => replacements[match]);
 }
