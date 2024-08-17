@@ -16,5 +16,5 @@ async function main() {
 
 function parseKirtan(lines: string[], index: number): any {
   const title = lines[1].replaceAll('• ', '');
-  return { title, lines, objectID: index };
+  return { title, lines, objectID: index.toString() };
 }
