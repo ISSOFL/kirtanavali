@@ -14,8 +14,7 @@ async function main() {
   fs.writeFileSync(outFilePath, JSON.stringify(withTitleKirtans, null, '  '));
 }
 
-function parseKirtan(lines: string[]): any {
+function parseKirtan(lines: string[], index: number): any {
   const title = lines[1].replaceAll('• ', '');
-  const content = lines.join('\n');
-  return { title, content };
+  return { title, lines, objectID: index };
 }
