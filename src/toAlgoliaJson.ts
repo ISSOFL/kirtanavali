@@ -1,0 +1,22 @@
+import fs from 'fs';
+import Sanscript from '@indic-transliteration/sanscript';
+
+const inFilePath = 'out/Kirtanavali_Lipi_Kirtans.json';
+const outFilePath = 'out/Kirtanavali_Lipi_Algolia.json';
+
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
+
+async function main() {
+  const lipiKirtans: string[][] = JSON.parse(fs.readFileSync(inFilePath, 'utf8'));
+  const withTitleKirtans = lipiKirtans.map(parseKirtan);
+  fs.writeFileSync(outFilePath, JSON.stringify(withTitleKirtans, null, '  '));
+}
+
+function parseKirtan(lines: string[]): any {
+  const title = lines[1].replaceAll('• ', '');
+  const content = lines.join('\n');
+  return { title, content };
+}
