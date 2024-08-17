@@ -1,5 +1,4 @@
 import fs from 'fs';
-import Sanscript from '@indic-transliteration/sanscript';
 
 const inFilePath = 'out/Kirtanavali_Lipi_Kirtans.json';
 const outFilePath = 'out/Kirtanavali_Lipi_Algolia.json';
