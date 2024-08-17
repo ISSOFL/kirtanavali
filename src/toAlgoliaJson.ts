@@ -11,7 +11,8 @@ main().catch((err) => {
 async function main() {
   const lipiKirtans: string[][] = JSON.parse(fs.readFileSync(inFilePath, 'utf8'));
   const withTitleKirtans = lipiKirtans.map(parseKirtan);
-  fs.writeFileSync(outFilePath, JSON.stringify(withTitleKirtans, null, '  '));
+  fs.writeFileSync(outFilePath, JSON.stringify(withTitleKirtans.slice(0, 1000), null, '  '));
+  fs.writeFileSync(outFilePath.replace('.json', '1.json'), JSON.stringify(withTitleKirtans.slice(1000), null, '  '));
 }
 
 function parseKirtan(lines: string[], index: number): any {
