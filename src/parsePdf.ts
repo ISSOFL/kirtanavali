@@ -1,8 +1,10 @@
 import fs from 'fs';
 import PDFParser, { Output as PDFOutput } from 'pdf2json';
 
-const pdfPath = 'pdfs/Kirtanavali_Guj.pdf';
-const jsonPath = 'out/Kirtanavali_Guj.json';
+// const pdfPath = 'pdfs/Kirtanavali_Guj.pdf';
+// const jsonPath = 'out/Kirtanavali_Guj.json';
+const pdfPath = 'pdfs/Kirtanavali_Guj_TOC.pdf';
+const jsonPath = 'out/Kirtanavali_Guj_TOC.json';
 
 async function main() {
   const parsedPdf = await readPdf(pdfPath);
