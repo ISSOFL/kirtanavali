@@ -33,6 +33,7 @@ function transliterate(gujStr: string): string {
     ē: 'e',
     ū: 'u',
     ō: 'o',
+    // ā: 'aa',
     ch: 'c̄', // છ
     c: 'ch', // ચ
     chch: 'cch', // ચ્ચે
