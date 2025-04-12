@@ -17,9 +17,9 @@ async function main() {
 
 function gujToLipi(gujLines: string[]): string[] {
   const lipiLines = gujLines.map(transliterate);
-  // return lipiLines;
-  const interleavedLines = interleaveArrays(lipiLines, gujLines);
-  return interleavedLines;
+  return lipiLines;
+  // const interleavedLines = interleaveArrays(lipiLines, gujLines);
+  // return interleavedLines;
 }
 
 function transliterate(gujStr: string): string {

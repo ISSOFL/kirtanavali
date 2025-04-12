@@ -3,6 +3,7 @@ npm-debug.log*
 yarn-debug.log*
 node_modules/
 .npm
+.DS_Store
 
 # using yarn
 package-lock.json
